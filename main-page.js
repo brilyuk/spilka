@@ -238,7 +238,7 @@ function animateAboutSection() {
 					scrollTrigger: {
 						trigger: about,
 						toggleActions: "restart pause resume reverse",
-						start: "left 40%",
+						start: "left 70%",
 						containerAnimation: horizontalScroll
 					}
 			  }
@@ -284,7 +284,7 @@ function animateServicesSection() {
 					scrollTrigger: {
 						trigger: services,
 						toggleActions: "restart pause resume reverse",
-						start: "left 30%",
+						start: "left 70%",
 						containerAnimation: horizontalScroll
 					}
 			  }
@@ -327,7 +327,7 @@ function animateGallerySection() {
 					scrollTrigger: {
 						trigger: gallery,
 						toggleActions: "restart pause resume reverse",
-						start: "left 40%",
+						start: "left 70%",
 						containerAnimation: horizontalScroll
 					}
 			  }
@@ -387,13 +387,34 @@ function animateContactsSection() {
 	);
 }
 
+function initSwiper() {
+	var swiper = new Swiper(".swiper", {
+		grabCursor: true,
+		slidesPerView: 1.2,
+		navigation: {
+			prevEl: ".gallery__slider-button-prev",
+			nextEl: ".gallery__slider-button-next"
+		},
+		breakpoints: {
+			768: {
+				slidesPerView: 2
+			},
+			1024: {
+				slidesPerView: 4
+			}
+		}
+	});
+}
+
 window.addEventListener("DOMContentLoaded", () => {
 	animatePreloader();
 	animateAboutSection();
 	animateServicesSection();
 	animateGallerySection();
 	animateContactsSection();
+	initSwiper();
 	mobileScroll();
+	
 	servicesButton.addEventListener("click", (e) => {
 		e.preventDefault();
 		const yButton = document.querySelector(".yButton");
@@ -403,22 +424,4 @@ window.addEventListener("DOMContentLoaded", () => {
 			console.warn("yButton does not yet exist in the DOM");
 		}
 	});
-});
-
-// slider init
-var swiper = new Swiper(".swiper", {
-	grabCursor: true,
-	slidesPerView: 1.2,
-	navigation: {
-		prevEl: ".gallery__slider-button-prev",
-		nextEl: ".gallery__slider-button-next"
-	},
-	breakpoints: {
-		768: {
-			slidesPerView: 2
-		},
-		1024: {
-			slidesPerView: 4
-		}
-	}
 });
