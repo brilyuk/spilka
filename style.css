@@ -1,0 +1,90 @@
+.yButton {
+	width: 200px !important;
+	height: 200px !important;
+	background-color: rgba(0, 0, 0, 0.5);
+	transition: 0.2s background-color ease-in-out, 0.2s transform ease-in-out;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.yButton:hover {
+	background-color: #000;
+	transform: scale(1.1);
+}
+
+.yButton.right {
+	right: 100px !important;
+}
+
+.yButtonBackground {
+	display: none !important;
+}
+
+.yButtonText {
+	display: none !important;
+}
+
+.yButtonWave {
+	display: none;
+}
+
+.yButtonIcon {
+	display: block;
+	width: 80%;
+	height: 80%;
+	background-image: url("https://cdn.prod.website-files.com/672e04a0c01ccadbc7688e5c/67616b1daf9437ec61dcbd54_btn-sign-up.svg");
+	background-size: cover;
+	-webkit-animation: spin 4s linear infinite;
+	-moz-animation: spin 4s linear infinite;
+	animation: spin 30s linear infinite;
+}
+
+.team__item.active .team__item-image {
+	object-position: 63% 50%;
+}
+
+.team__item-image {
+	transition: object-position .5s cubic-bezier(.455, .03, .515, .955);
+}
+
+.w-webflow-badge {
+	display: None !important;
+	visibility: hidden !important;
+}
+
+@media screen and (max-width: 767px) {
+  .team__item:last-child .team__item-toggle {
+    inset: 0% auto auto -40px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+	.yButton {
+		width: 100px !important;
+		height: 100px !important;
+	}
+	.yButton.right {
+		right: 50px !important;
+	}
+}
+
+@-moz-keyframes spin {
+	100% {
+		-moz-transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes spin {
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@keyframes spin {
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
