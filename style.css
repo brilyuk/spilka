@@ -54,6 +54,10 @@
 	visibility: hidden !important;
 }
 
+.team-page .yButton {
+	display: none;
+}
+
 .team__item.swiper-slide {
 	opacity: 0;
 	transition-property: width;

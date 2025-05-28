@@ -10,7 +10,6 @@ const preloader = document.querySelector(".preloader");
 const preloaderLogo = preloader.querySelector(".preloader__logo");
 const preloaderTitle = preloader.querySelector(".preloader__title");
 const toggl = document.querySelector(".header__toggl");
-const servicesButton = document.querySelector(".services__bottom-button");
 const serviceSectionLink = document.querySelector("[data-href='#services-section']");
 let isPreloaderShow = localStorage.getItem("isPreloaderShow");
 let horizontalScroll;
@@ -414,14 +413,4 @@ window.addEventListener("DOMContentLoaded", () => {
 	animateContactsSection();
 	initSwiper();
 	mobileScroll();
-	
-	servicesButton.addEventListener("click", (e) => {
-		e.preventDefault();
-		const yButton = document.querySelector(".yButton");
-		if (yButton) {
-			yButton.click();
-		} else {
-			console.warn("yButton does not yet exist in the DOM");
-		}
-	});
 });
