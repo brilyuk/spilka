@@ -1,3 +1,7 @@
+.header__logo {
+	width: 38px;
+}
+
 .yButton {
 	width: 200px !important;
 	height: 200px !important;
@@ -65,9 +69,20 @@
 	transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
+.footer__link.se7ensky .footer__link-image path {
+	transition: 0.2s fill ease-in-out;
+}
+
+.footer__link.se7ensky:hover .footer__link-image path {
+	fill: #FF7700;
+}
+
 @media screen and (max-width: 767px) {
 	.team__item:last-child .team__item-toggle {
 		inset: 0% auto auto -40px;
+	}
+	.header__logo {
+		width: 45px;
 	}
 }
 
