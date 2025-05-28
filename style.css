@@ -55,16 +55,16 @@
 }
 
 .team__item.swiper-slide {
-  opacity: 0;
-  transition-property: width;
-  transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	opacity: 0;
+	transition-property: width;
+	transition-duration: 500ms;
+	transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 @media screen and (max-width: 767px) {
-  .team__item:last-child .team__item-toggle {
-    inset: 0% auto auto -40px;
-  }
+	.team__item:last-child .team__item-toggle {
+		inset: 0% auto auto -40px;
+	}
 }
 
 @media screen and (max-width: 479px) {
