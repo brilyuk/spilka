@@ -9,7 +9,7 @@ const body = document.querySelector("body");
 const preloader = document.querySelector(".preloader");
 const preloaderLogo = preloader.querySelector(".preloader__logo");
 const preloaderTitle = preloader.querySelector(".preloader__title");
-const toggl = document.querySelector(".header__toggl");
+const burger = document.querySelector(".header__burger");
 const serviceSectionLink = document.querySelector("[data-href='#services-section']");
 let isPreloaderShow = localStorage.getItem("isPreloaderShow");
 let horizontalScroll;
@@ -37,11 +37,11 @@ function setLogoLangColor(isWhiteLogoColor) {
 	if (isWhiteLogoColor) {
 		document.querySelector(".header__logo-image").classList.add("white-color");
 		document.querySelector(".header__lang-link").classList.add("white-color");
-		document.querySelector(".header__toggl-icon").classList.add("white-color");
+		burger.querySelectorAll(".toggle-line").forEach((line) => line.classList.add("white-color"));
 	} else {
 		document.querySelector(".header__logo-image").classList.remove("white-color");
 		document.querySelector(".header__lang-link").classList.remove("white-color");
-		document.querySelector(".header__toggl-icon").classList.remove("white-color");
+		burger.querySelectorAll(".toggle-line").forEach((line) => line.classList.remove("white-color"));
 	}
 }
 
@@ -118,9 +118,9 @@ function mobileScroll() {
 }
 
 // mobile toggl click
-toggl.addEventListener("click", () => {
+burger.addEventListener("click", () => {
 	setTimeout(() => {
-		toggl.closest(".w--open") ? setLogoLangColor(false) : mobileScroll();
+		burger.closest(".w--open") ? setLogoLangColor(false) : mobileScroll();
 	}, 300);
 });
 

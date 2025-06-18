@@ -5,7 +5,7 @@ const teamItems = team.querySelectorAll(".team__item");
 const teamToggles = team.querySelectorAll(".team__item-toggle");
 const activeContent = team.querySelector(".team__item-content.active");
 const header = document.querySelector(".header");
-const toggl = header.querySelector(".header__toggl");
+const burger = header.querySelector(".header__burger");
 let isMobile = window.innerWidth < 768;
 
 // animate team
@@ -46,17 +46,17 @@ function setLogoLangColor(isWhiteLogoColor) {
 	if (isWhiteLogoColor) {
 		document.querySelector(".header__logo-image").classList.add("white-color");
 		document.querySelector(".header__lang-link").classList.add("white-color");
-		document.querySelector(".header__toggl-icon").classList.add("white-color");
+		burger.querySelectorAll(".toggle-line").forEach((line) => line.classList.add("white-color"));
 	} else {
 		document.querySelector(".header__logo-image").classList.remove("white-color");
 		document.querySelector(".header__lang-link").classList.remove("white-color");
-		document.querySelector(".header__toggl-icon").classList.remove("white-color");
+		burger.querySelectorAll(".toggle-line").forEach((line) => line.classList.remove("white-color"));
 	}
 }
 
-toggl.addEventListener("click", () => {
+burger.addEventListener("click", () => {
 	setTimeout(() => {
-		toggl.closest(".w--open") ? setLogoLangColor(false) : setLogoLangColor(true);
+		burger.closest(".w--open") ? setLogoLangColor(false) : setLogoLangColor(true);
 	}, 300);
 });
 
