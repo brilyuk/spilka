@@ -150,7 +150,7 @@ links.forEach((anchor) => {
 
 serviceSectionLink.addEventListener("click", (e) => {
 	if (isMobile) {
-		toggl.click();
+		burger.click();
 		gsap.to(window, { scrollTo: { y: e.target.getAttribute("data-href"), autoKill: false } });
 	} else {
 		scrollToSection(e);
